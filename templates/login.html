@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>login</title>
+    
+</head>
+<body>
+    {% for message in messages %}
+    <h3>{{ message }}</h3>
+    {% endfor %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <h2>login</h2>
+        <input type="text" name="username" placeholder="Enter Username">
+        <input type="email" name="email" placeholder="Enter Email">
+        <input type="password" name="password1" placeholder="Enter Password">
+        <button type="submit">Login</button>
+        <p><a href="{% url 'register'%}">Register</a></p>
+    </form>
+
+</body>
+</html>
